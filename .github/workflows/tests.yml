@@ -31,7 +31,7 @@ jobs:
 
       - run: brew test-bot --only-setup
 
-      - run: brew test-bot --only-tap-syntax --verbose --debug
+      - run: brew test-bot --only-tap-syntax
         if: runner.os != 'Linux'
 
       - run: brew test-bot --only-formulae
