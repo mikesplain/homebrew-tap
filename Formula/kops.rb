@@ -12,10 +12,9 @@ class Kops < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "ee460c56c2a6cf62dc73182ee03751c2b0f636739dc9580a65ae9c6f01d5dfac"
-    sha256 cellar: :any_skip_relocation, big_sur:       "dc76ef80405215e3d2a7fe3ec3a6590e215286ca4ede2c6a23a6c403f49bbe43"
-    sha256 cellar: :any_skip_relocation, catalina:      "e84992b3fcc269ab97967f8d7dc8611e1a639f2430fe782e8db65ef99347362e"
-    sha256 cellar: :any_skip_relocation, mojave:        "af7138ea9bba23e0ca24121d16c105a288d6eb65bf90a753829cd35ef7e8d865"
+    root_url "https://github.com/mikesplain/homebrew-tap/releases/download/kops-1.20.1"
+    sha256 cellar: :any_skip_relocation, catalina:     "5649a9807d6eaa88a81e09d1c2aa482f223366aaf7d541d75478f46b99a9ff0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ff45026a3c33591587ddf7443390d11d940083bf6bf0bbc8e8b8d66ddbfeb065"
   end
 
   depends_on "go" => :build
