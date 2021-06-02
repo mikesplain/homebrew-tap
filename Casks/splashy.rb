@@ -9,5 +9,5 @@ cask "splashy" do
 
   depends_on macos: ">= :catalina"
 
-  app "Splashy #{version.major}.app"
+  app "Splashy.app"
 end
