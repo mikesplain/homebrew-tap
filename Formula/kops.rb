@@ -29,7 +29,6 @@ class Kops < Formula
     kopspath = buildpath/"src/k8s.io/kops"
     kopspath.install Dir["*"]
     system "make", "-C", kopspath
-    bin.install "kops"
 
     # Install bash completion
     output = Utils.safe_popen_read(bin/"kops", "completion", "bash")
