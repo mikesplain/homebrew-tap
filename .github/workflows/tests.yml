@@ -17,7 +17,7 @@ jobs:
 
       - name: Cache Homebrew Bundler RubyGems
         id: cache
-        uses: actions/cache@v3.0.5
+        uses: actions/cache@v1
         with:
           path: ${{ steps.set-up-homebrew.outputs.gems-path }}
           key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
@@ -32,14 +32,13 @@ jobs:
       - run: brew test-bot --only-setup
 
       - run: brew test-bot --only-tap-syntax
-        if: runner.os != 'Linux'
 
-      - run: brew test-bot --only-formulae
+      - run: brew test-bot --only-formulae --root-url=https://ghcr.io/v2/mikesplain/homebrew-tap
         if: github.event_name == 'pull_request'
 
       - name: Upload bottles as artifact
         if: always() && github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v3.1.0
+        uses: actions/upload-artifact@main
         with:
           name: bottles
           path: '*.bottle.*'
