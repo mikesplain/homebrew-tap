@@ -4,6 +4,7 @@ class Kops < Formula
   url "https://github.com/kubernetes/kops/archive/v1.24.1.tar.gz"
   sha256 "011c01528e5906e6d4ffa4371f9f855b8fe8c635f67a056eaeda0b02f8050e92"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/kubernetes/kops.git", branch: "master"
 
   livecheck do
