@@ -12,12 +12,9 @@ class Kops < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bd50adb4a14ce4bc457cac9fb82bcf15bc41257f4e81a308ea0e7f7412afdc94"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "75544f9be0611590173e5260c41fd5520051ed52a6c6207800aa6a59e357031a"
-    sha256 cellar: :any_skip_relocation, monterey:       "93b804034ba15c1a96a6bb90d32b64f6324f0d6595d3cec7c9c948cf9d1952f9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c718c1b2d3422ea2d3f63a4b5ca413749f6e374a8c6a75bd3a7f6c3e8099d0c8"
-    sha256 cellar: :any_skip_relocation, catalina:       "991a8c5df8a99c00b3cb5a323b2514a1ed4ea2156924584ceee1fb7931842955"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "37ed9eaa22de0c82eef0b93505d1a9acb5f615b7be69bd6e991b430bcc2fbfbb"
+    root_url "https://ghcr.io/v2/mikesplain/tap"
+    sha256 cellar: :any_skip_relocation, big_sur:      "76feddd404518b189f26865785435edecef8093577f07a5f9e1b1ea6fee0bc9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0bf932be96a49b9d2e297002f70adc8ac9821cb9775a88f930188246d5825492"
   end
 
   depends_on "go" => :build
