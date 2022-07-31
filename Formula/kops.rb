@@ -6,7 +6,7 @@ class Kops < Formula
   license "Apache-2.0"
   revision 1
   head "https://github.com/kubernetes/kops.git", branch: "master"
-  
+
   livecheck do
     url :stable
     strategy :github_latest
