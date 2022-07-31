@@ -14,8 +14,9 @@ class Kops < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/mikesplain/tap"
-    sha256 cellar: :any_skip_relocation, big_sur:      "76feddd404518b189f26865785435edecef8093577f07a5f9e1b1ea6fee0bc9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0bf932be96a49b9d2e297002f70adc8ac9821cb9775a88f930188246d5825492"
+    sha256 cellar: :any_skip_relocation, monterey:     "7b5b70321bb85308b31b2b106b333ed9a27b391b64f7783643aeae92f67a9f55"
+    sha256 cellar: :any_skip_relocation, big_sur:      "de7514f36017c0064a8f6a92d7f2eb7a8602e8719c5f24962bc66a41859fabcf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5fe2d9ca7e4ddfde32a1a11eed4da1ed0761cb9b30aac7173ffac4ba2a3db425"
   end
 
   depends_on "go" => :build
