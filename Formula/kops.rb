@@ -24,24 +24,15 @@ class Kops < Formula
   depends_on "kubernetes-cli"
 
   def install
-    ENV["VERSION"] = version unless build.head?
-    ENV["GOBIN"] = buildpath
-    kopspath = buildpath/"src/k8s.io/kops"
-    kopspath.install Dir["*"]
-    system "make", "-C", kopspath
-    bin.install "kops"
+    ldflags = "-X k8s.io/kops.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags), "k8s.io/kops/cmd/kops"
 
-    # Install bash completion
-    output = Utils.safe_popen_read(bin/"kops", "completion", "bash")
-    (bash_completion/"kops").write output
-
-    # Install zsh completion
-    output = Utils.safe_popen_read(bin/"kops", "completion", "zsh")
-    (zsh_completion/"_kops").write output
-
-    # Install fish completion
-    output = Utils.safe_popen_read(bin/"kops", "completion", "fish")
-    (fish_completion/"kops.fish").write output
+    bash_output = Utils.safe_popen_read(bin/"kops", "completion", "bash")
+    (bash_completion/"kops").write bash_output
+    zsh_output = Utils.safe_popen_read(bin/"kops", "completion", "zsh")
+    (zsh_completion/"_kops").write zsh_output
+    fish_output = Utils.safe_popen_read(bin/"kops", "completion", "fish")
+    (fish_completion/"kops.fish").write fish_output
   end
 
   test do
